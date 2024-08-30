@@ -152,17 +152,17 @@ const Drawing: React.FC = () => {
     <div className="flex flex-col items-center bg-white p-4 max-w-6xl mx-auto mt-6">
       <div className="text-3xl font-bold mb-4">Drawing App</div>
       <div className="flex flex-col md:flex-row w-full">
-        <div className="flex flex-col items-center md:items-start md:mr-4 mb-4 md:mb-0">
+        <div className="mt-24 flex flex-col justify-between items-center md:items-start md:mr-4 mb-4 md:mb-0">
           {colors.map((c) => (
             <button
               key={c}
-              className="w-8 h-8 rounded-full mb-2"
+              className="w-12 h-12 rounded-full mb-2"
               style={{ backgroundColor: c }}
               onClick={() => setColor(c)}
             />
           ))}
         </div>
-        <div className="flex-grow">
+        <div className="flex-grow mt-8">
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center">
               <label htmlFor="strokeWidth" className="mr-2 font-bold">
@@ -181,27 +181,27 @@ const Drawing: React.FC = () => {
             <div className="flex space-x-2">
               <button
                 onClick={undo}
-                className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                className="p-2 bg-gray-200 rounded hover:bg-gray-300 flex justify-center items-center font-medium"
               >
-                <UndoIcon size={20} />
+                <UndoIcon className="mr-3" size={20} /> Undo
               </button>
               <button
                 onClick={redo}
-                className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                className="p-2 bg-gray-200 rounded hover:bg-gray-300 flex justify-center items-center font-medium"
               >
-                <RedoIcon size={20} />
+                <RedoIcon className="mr-3" size={20} /> Redo
               </button>
               <button
                 onClick={clearCanvas}
-                className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                className="p-2 bg-gray-200 rounded hover:bg-gray-300 flex justify-center items-center font-medium"
               >
-                <Trash2Icon size={20} />
+                <Trash2Icon className="mr-3" size={20} /> Clear Canvas
               </button>
               <button
                 onClick={downloadPNG}
-                className="p-2 bg-gray-200 rounded hover:bg-gray-300"
+                className="p-2 bg-gray-200 rounded hover:bg-gray-300 flex justify-center items-center font-medium"
               >
-                <DownloadIcon size={20} />
+                <DownloadIcon className="mr-3" size={20} /> Download PNG
               </button>
             </div>
           </div>
